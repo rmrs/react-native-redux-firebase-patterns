@@ -1,4 +1,4 @@
-# Some code patterns for working with react native, Firebase and redux-thunk
+# Some code patterns for working with React Native, Firebase and Redux
 
 To run the tests
 ```
