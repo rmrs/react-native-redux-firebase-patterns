@@ -6,6 +6,7 @@ export function listenRemoved(metaType: string) {
     metaType,
   }
 }
+
 export function removeListenerRef(state: Object, metaType: string) {
   if (state && state.database &&  state.database[metaType] &&
     state.database[metaType].ref) {

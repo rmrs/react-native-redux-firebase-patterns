@@ -22,14 +22,14 @@ export const reducer = createReducer(initialState, {
   ['FIREBASE_LISTEN_REQUESTED'](state, action) {
     const newState = {
       ...state,
-      [action.metaType]: { inProgress: true, items: { } }
+      [action.metaType]: { ...state[action.metaType], inProgress: true }
     }
     return newState
   },
   ['FIREBASE_LISTEN_FULFILLED'](state, action) {
     const newState = {
       ...state,
-      [action.metaType]: { inProgress: true, items: action.items }
+      [action.metaType]: { ...state[action.metaType], inProgress: false, items: action.items }
     }
     return newState
   },

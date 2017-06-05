@@ -2,18 +2,19 @@
   const newState = {
     ...state,
     [action.metaType]: {
-      inProgress: true, error: '', items: { }, ref: action.ref
+      ...state[action.metaType],
+      inProgress: true, error: '', ref: action.ref
     }
   }
   return newState
 },
 ...
 ['FIREBASE_LISTEN_REMOVED'](state, action) {
-  const metaState = state[action.metaType]
   const newState = {
     ...state,
     [action.metaType]: {
-      inProgress: false, error: '', items: { }, ref: null
+      ...state[action.metaType],
+      inProgress: false, error: '', ref: null
     }
   }
   return newState

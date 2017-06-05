@@ -8,6 +8,7 @@ export function listenRequested(metaType: string) {
     metaType
   }
 }
+
 export function listenRejected(metaType: string, error: string) {
   return {
     type: 'FIREBASE_LISTEN_REJECTED',
@@ -15,6 +16,7 @@ export function listenRejected(metaType: string, error: string) {
     error
   }
 }
+
 export function listenFulfilled(metaType: string, items: Object) {
   return {
     type: 'FIREBASE_LISTEN_FULFILLED',
@@ -22,6 +24,7 @@ export function listenFulfilled(metaType: string, items: Object) {
     items
   }
 }
+
 export function listenChildAdded(metaType: string, id: string, value: Object) {
   return {
     type: 'FIREBASE_LISTEN_CHILD_ADDED',
@@ -30,6 +33,7 @@ export function listenChildAdded(metaType: string, id: string, value: Object) {
     value,
   }
 }
+
 export function listenChildChanged(metaType: string, id: string, value: Object) {
   return {
     type: 'FIREBASE_LISTEN_CHILD_CHANGED',
@@ -38,6 +42,7 @@ export function listenChildChanged(metaType: string, id: string, value: Object) 
     value,
   }
 }
+
 export function listenChildRemoved(metaType: string, id: string) {
   return {
     type: 'FIREBASE_LISTEN_CHILD_REMOVED',

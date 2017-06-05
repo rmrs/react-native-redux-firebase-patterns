@@ -23,7 +23,7 @@ export const reducer = createReducer(initialState, {
     const newState = {
       ...state,
       [action.metaType]: {
-        inProgress: true, error: '', items: { }
+        ...state[action.metaType], inProgress: true, error: '',
       }
     }
     return newState
@@ -32,7 +32,8 @@ export const reducer = createReducer(initialState, {
     const newState = {
       ...state,
       [action.metaType]: {
-        inProgress: true, error: '', items: action.items
+        ...state[action.metaType],
+        inProgress: false, error: '', items: action.items
       }
     }
     return newState
@@ -41,7 +42,9 @@ export const reducer = createReducer(initialState, {
     const error = action.error
     const newState = {
       ...state,
-      [action.metaType]: { inProgress: false, error, items: { } }
+      [action.metaType]: {
+        ...state[action.metaType], inProgress: false, error
+      }
     }
     return newState
   },
@@ -50,7 +53,9 @@ export const reducer = createReducer(initialState, {
     const items = { ...currentItems, [action.id]: action.value }
     const newState = {
       ...state,
-      [action.metaType]: { inProgress: false, error: '', items }
+      [action.metaType]: {
+        ...state[action.metaType], inProgress: false, error: '', items
+      }
     }
     return newState
   },
@@ -59,7 +64,9 @@ export const reducer = createReducer(initialState, {
     const items = { ...currentItems, [action.id]: action.value }
     const newState = {
      ...state,
-     [action.metaType]: { inProgress: false, error: '', items }
+     [action.metaType]: {
+       ...state[action.metaType], inProgress: false, error: '', items
+     }
     }
     return newState
   },
@@ -69,7 +76,9 @@ export const reducer = createReducer(initialState, {
     delete items[action.id]
     const newState = {
       ...state,
-      [action.metaType]: { inProgress: false, error: '', items }
+      [action.metaType]: {
+        ...state[action.metaType], inProgress: false, error: '', items
+      }
     }
     return newState
   },

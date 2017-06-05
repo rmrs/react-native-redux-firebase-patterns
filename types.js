@@ -21,26 +21,19 @@ export const firebase = {
 }
 
 export const metaTypes = {
-  updateUserInfo: 'updateUserInfo',
-  removeUser: 'removeUser',
-  submitOffering: 'submitOffering',
-  updateOffering: 'updateOffering',
-  submitMessage: 'submitMessage',
-  newConversation: 'newConversation',
-  offerings: 'offerings',
-  offeringsCategories: 'offeringsCategories',
-  userOfferings: 'userOfferings',
-  userMessages: 'userMessages',
-  userConversations: 'userConversations',
-  updateConversation: 'updateConversation',
+  messages: 'messages',
+  userContacts: 'userContacts',
+  updateMessage: 'updateMessage',
+  removeMessage: 'removeMessage',
 }
 
 export type MetaType = $Keys<typeof metaTypes>
 
-export type MetaAction = {
+export type EmptyAction = {
   type: string,
-  metaType: MetaType,
 }
+
+export type MetaAction = EmptyAction & { metaType: MetaType }
 
 export type MetaActionWithError = MetaAction & { error: string }
 
@@ -57,7 +50,6 @@ export type MetaActionWithClear = MetaAction & { clearItems: boolean }
 export type UpdateItemsActions = MetaAction | MetaActionWithError
 
 export type RemoveItemActions = MetaAction | MetaActionWithError
-
 
 export type ListenToPathActions = MetaAction | MetaActionWithRef |
   MetaActionWithChild | MetaActionWithId | MetaActionWithError |

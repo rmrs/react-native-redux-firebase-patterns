@@ -36,6 +36,7 @@ export function listenToPath(metaType: string, path: string) {
 export function listenToMessages() {
   return listenToPath('messages', 'messages')
 }
-export function listenToUserContacts() {
-  return listenToPath('userContacts', 'user/contacts')
+
+export function listenToUserContacts(uid: string) {
+  return listenToPath('userContacts', `users/${uid}/contacts`)
 }

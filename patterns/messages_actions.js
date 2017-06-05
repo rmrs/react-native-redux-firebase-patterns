@@ -7,6 +7,7 @@ export function messagesRequested() {
     type: 'MESSAGES_REQUESTED'
   }
 }
+
 export function messagesFulfilled(items: Object) {
   return {
     type: 'MESSAGES_FULFILLED',
